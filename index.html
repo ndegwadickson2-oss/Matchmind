@@ -1,1 +1,51 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MatchMind</title>
+<style>
+body{margin:0;padding:20px;background:#0b1220;color:#f1f5f9;font-family:Arial,sans-serif}
+h1{color:#4ade80}
+.card{background:#172235;padding:18px;border-radius:14px;margin:16px 0}
+input{box-sizing:border-box;width:100%;padding:12px;margin:8px 0;background:#0b1220;color:white;border:1px solid #475569;border-radius:8px}
+button{padding:12px 16px;background:#22c55e;color:#07120b;border:0;border-radius:8px;font-weight:bold}
+.green{color:#4ade80}
+</style>
+</head>
+<body>
+<h1>⚽ MatchMind</h1>
+<p>Football Predictions & Match Analysis</p>
+<div class="card">
+<h2>Welcome to MatchMind</h2>
+<p>Your football analysis dashboard.</p>
+<p class="green">Make informed decisions with match statistics.</p>
+</div>
+<div class="card">
+<h2>🔮 Match Predictor</h2>
+<input id="home" placeholder="Home team">
+<input id="away" placeholder="Away team">
+<button onclick="analyse()">Analyse Match</button>
+<div id="result"></div>
+</div>
+<div class="card">
+<h2>🧠 Match Analysis</h2>
+<p id="analysis">Enter two teams to get started.</p>
+</div>
+<p style="color:#94a3b8;font-size:12px">Demo version. Live match data and AI predictions are not connected yet.</p>
+<script>
+function analyse(){
+const h=document.getElementById('home').value.trim();
+const a=document.getElementById('away').value.trim();
+const r=document.getElementById('result');
+const p=document.getElementById('analysis');
+if(!h||!a){r.textContent='Please enter both teams.';return;}
+if(h.toLowerCase()===a.toLowerCase()){r.textContent='Enter two different teams.';return;}
+r.textContent=h+' vs '+a+' — fixture entered successfully.';
+p.textContent='Compare recent form, goals scored and conceded, home advantage, injuries and team news. No statistical prediction has been calculated yet.';
+}
+</script>
+</body>
+</html>
